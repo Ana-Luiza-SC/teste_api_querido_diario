@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Licitações</title>
+</head>
+<body>
+    <h1>Licitações Encontradas</h1>
+    <table border="1">
+        <tr>
+            <th>Número</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Território</th>
+            <th>URL</th>
+        </tr>
+        {% for licitacao in licitacoes %}
+        <tr>
+            <td>{{ licitacao.numero }}</td>
+            <td>{{ licitacao.descricao }}</td>
+            <td>{{ licitacao.valor }}</td>
+            <td>{{ licitacao.data }}</td>
+            <td>{{ licitacao.territorio }}</td>
+            <td><a href="{{ licitacao.url }}" target="_blank">Link</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

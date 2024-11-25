@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gazettes de Maceió</title>
+</head>
+<body>
+    <h1>Gazettes de Maceió</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Município</th>
+                <th>Estado</th>
+                <th>Link para o arquivo TXT</th>
+                <th>Link para o arquivo PDF</th>
+                <th>Fragmentos de Gazetas Oficiais</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in dados %}
+            <tr>
+                <td>{{ item.date }}</td>
+                <td>{{ item.territory_name }}</td>
+                <td>{{ item.state_code }}</td>
+                <td><a href="{{ item.text_url }}" target="_blank">Baixar TXT</a></td>
+                <td><a href="{{ item.url }}" target="_blank">Baixar PDF</a></td>
+                <td>{{item.excerpts}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
